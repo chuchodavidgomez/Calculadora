@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Stack;
@@ -43,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         btnPoten = (Button)findViewById(R.id.btnPotencia);
         btnRaiz = (Button)findViewById(R.id.btnRaiz);
         btnIgual = (Button)findViewById(R.id.btnResultado);
-        btnIngresar = (Button)findViewById(R.id.btnIngresar);
         pila = new Stack();
 
         btnUno.setOnClickListener(new View.OnClickListener() {
@@ -237,14 +237,9 @@ public class MainActivity extends AppCompatActivity {
         float numero= 0;
         while(!pila.empty()&&!salir){
             switch (pila.peek().toString()) {
-                case "(":
-                    pila.pop();
-                    salir = true;
-                    break;
                 case "+":
                     pila.pop();
                     pila2.push((Float.parseFloat(pila.peek().toString())+numero)+"");
-                    System.out.println("en la pila quedo "+pila.peek()+"y en la otra"+pila2.peek());
                     pila.pop();
                     numero = 0;
                     break;
@@ -279,14 +274,13 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 default:
                     numero = Float.parseFloat(pila.pop().toString());
-                    System.out.println("numero tiene "+numero);
                     break;
             }
         }
 
         while(!pila2.empty()){
             pila.push(pila2.pop().toString());
-            System.out.println("en la pila quedo al final quedo "+pila.peek());
+
         }
 
     }
@@ -306,19 +300,9 @@ public class MainActivity extends AppCompatActivity {
             {
             if(!subOperacion.equals("")){
                 pila.push(subOperacion);
-                System.out.println("pila tiene "+pila.peek().toString());
             }
             subOperacion = "";
                 switch (ope.charAt(i)) {
-                    case '(':
-                        pila.push("(");
-                        break;
-                    case ')':
-                        for(int u =0; u<pila.size();u++){
-                            System.out.println("en la poscion: "+u+" tiene: "+pila.elementAt(u) );
-                        }
-                        reconocePila();
-                        break;
                     case '+':
                         if(i == 0) {
                             subOperacion = "+";
@@ -362,10 +346,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-        for(int i =0; i<pila.size();i++){
-            System.out.println("en la poscion: "+i+" tiene: "+pila.elementAt(i) );
-        }
-        //reconocePila();
+        reconocePila();
         result = pila.pop().toString();
         return result;
     }

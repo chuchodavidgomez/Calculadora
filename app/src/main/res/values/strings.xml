@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Calculadora</string>
+    <string name="clearAll">C</string>
+    <string name="clear">CE</string>
 </resources>

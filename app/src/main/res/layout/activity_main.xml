@@ -2,104 +2,95 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/colorOperaciones"
     android:orientation="vertical">
+
+
 
     <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:orientation="horizontal">
+        android:layout_height="100dp"
+        android:background="@color/colorBack"
 
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:id="@+id/pantalla"/>
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:weightSum="1">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/tecladoBorrar">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="◄"
-            android:id="@+id/btnBorrar"
-            android:layout_weight="1"/>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/horizontalScrollView"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textViewHR"
+            android:fillViewport="true"
+            android:layout_alignParentEnd="true"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:id="@+id/pantalla"
+                android:layout_gravity="bottom"
+                android:layout_weight="1.83" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="◄◄"
-            android:id="@+id/btnBorrarTodo"/>
-        </LinearLayout>
+        </HorizontalScrollView>
+
 
     </android.support.v7.widget.LinearLayoutCompat>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+
         android:orientation="horizontal"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:id="@+id/teclado">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="271dp"
             android:layout_height="298dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp">
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Ingrese ecuación"
-                android:id="@+id/etManual"/>
+            >
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/etManual"
-                android:layout_alignLeft="@+id/btnTres"
-                android:text="»"
-                android:id="@+id/btnIngresar"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/etManual"
                 android:layout_alignParentLeft="true"
                 android:text="1"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/colorNumbers"
                 android:id="@+id/btnUno"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/etManual"
+                android:textColor="@color/colorWhite"
                 android:layout_toRightOf="@+id/btnUno"
                 android:text="2"
+                android:backgroundTint="@color/colorNumbers"
                 android:id="@+id/btnDos"/>
             <Button
+                android:textColor="@color/colorWhite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/btnDos"
-                android:layout_below="@id/etManual"
                 android:text="3"
+                android:backgroundTint="@color/colorNumbers"
                 android:id="@+id/btnTres"/>
             <Button
+                android:textColor="@color/colorWhite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btnUno"
                 android:layout_alignParentLeft="true"
                 android:text="4"
+                android:backgroundTint="@color/colorNumbers"
                 android:id="@+id/btnCuatro"/>
             <Button
                 android:layout_width="wrap_content"
+                android:textColor="@color/colorWhite"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btnDos"
+                android:backgroundTint="@color/colorNumbers"
                 android:layout_toRightOf="@+id/btnCuatro"
                 android:text="5"
                 android:id="@+id/btnCinco"/>
@@ -107,20 +98,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btnTres"
+                android:backgroundTint="@color/colorNumbers"
                 android:layout_toRightOf="@+id/btnCinco"
                 android:text="6"
+                android:textColor="@color/colorWhite"
                 android:id="@+id/btnSeis"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btnCuatro"
+                android:textColor="@color/colorWhite"
                 android:layout_alignParentLeft="true"
+                android:backgroundTint="@color/colorNumbers"
                 android:text="7"
                 android:id="@+id/btnSiete"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btnCinco"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/colorNumbers"
                 android:layout_toRightOf="@+id/btnUno"
                 android:text="8"
                 android:id="@+id/btnOcho"/>
@@ -128,6 +125,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btnSeis"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/colorNumbers"
                 android:layout_toRightOf="@+id/btnDos"
                 android:text="9"
                 android:id="@+id/btnNueve"/>
@@ -135,12 +134,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btnSiete"
+                android:textColor="@color/colorWhite"
                 android:layout_alignParentLeft="true"
+                android:backgroundTint="@color/colorNumbers"
                 android:text="("
                 android:id="@+id/btnParenIzq"/>
             <Button
                 android:layout_width="wrap_content"
+                android:backgroundTint="@color/colorNumbers"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
                 android:layout_below="@id/btnOcho"
                 android:layout_toRightOf="@+id/btnUno"
                 android:text="0"
@@ -152,7 +155,8 @@
                 android:layout_toRightOf="@+id/btnDos"
                 android:text="="
                 android:id="@+id/btnResultado"
-                android:layout_alignBottom="@+id/btnPunto" />
+                android:layout_alignBottom="@+id/btnBorrarTodo"
+                android:backgroundTint="@color/colorOthers"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -160,16 +164,37 @@
                 android:layout_below="@id/btnCero"
                 android:layout_toRightOf="@+id/btnParenIzq"
                 android:text="."
+                android:textColor="#FFFFFF"
+                android:backgroundTint="@color/colorNumbers"
                 android:id="@+id/btnPunto"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorNumbers"
+                android:textColor="#FFFFFF"
+
                 android:layout_below="@id/btnParenIzq"
                 android:layout_alignParentLeft="true"
                 android:layout_toRightOf="@+id/btnParenIzq"
                 android:text=")"
                 android:id="@+id/btnParenDere"/>
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clear"
+                android:backgroundTint="@color/colorOthers"
+                android:id="@+id/btnBorrar"
+                android:layout_below="@id/btnParenDere"
+                android:layout_alignParentStart="true" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clearAll"
+                android:backgroundTint="@color/colorOthers"
+                android:layout_toRightOf="@id/btnBorrar"
+                android:layout_below="@id/btnPunto"
+                android:id="@+id/btnBorrarTodo"/>
 
 
         </RelativeLayout>
@@ -185,32 +210,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="+"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/colorOperaciones"
                 android:id="@+id/btnSumar"/>
             <Button
                 android:layout_width="match_parent"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/colorOperaciones"
                 android:layout_height="wrap_content"
                 android:text="-"
                 android:id="@+id/btnRestar"/>
             <Button
                 android:layout_width="match_parent"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/colorOperaciones"
                 android:layout_height="wrap_content"
                 android:text="/"
                 android:id="@+id/btnDividir"/>
             <Button
+                android:textColor="@color/colorWhite"
                 android:layout_width="match_parent"
+                android:backgroundTint="@color/colorOperaciones"
                 android:layout_height="wrap_content"
                 android:text="x"
                 android:id="@+id/btnMultiplicar"/>
 
             <Button
                 android:layout_width="match_parent"
+                android:textColor="@color/colorWhite"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorOperaciones"
                 android:text="pot"
                 android:id="@+id/btnPotencia"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/colorOperaciones"
                 android:text="√"
                 android:id="@+id/btnRaiz"/>
 
