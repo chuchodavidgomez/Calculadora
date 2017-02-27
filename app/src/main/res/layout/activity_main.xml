@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:id="@+id/pantalla"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/tecladoBorrar">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="◄"
+            android:id="@+id/btnBorrar"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="◄◄"
+            android:id="@+id/btnBorrarTodo"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:id="@+id/teclado">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="298dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese ecuación"
+                android:id="@+id/etManual"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/etManual"
+                android:layout_alignLeft="@+id/btnTres"
+                android:text="»"
+                android:id="@+id/btnIngresar"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etManual"
+                android:layout_alignParentLeft="true"
+                android:text="1"
+                android:id="@+id/btnUno"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etManual"
+                android:layout_toRightOf="@+id/btnUno"
+                android:text="2"
+                android:id="@+id/btnDos"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/btnDos"
+                android:layout_below="@id/etManual"
+                android:text="3"
+                android:id="@+id/btnTres"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnUno"
+                android:layout_alignParentLeft="true"
+                android:text="4"
+                android:id="@+id/btnCuatro"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnDos"
+                android:layout_toRightOf="@+id/btnCuatro"
+                android:text="5"
+                android:id="@+id/btnCinco"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnTres"
+                android:layout_toRightOf="@+id/btnCinco"
+                android:text="6"
+                android:id="@+id/btnSeis"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnCuatro"
+                android:layout_alignParentLeft="true"
+                android:text="7"
+                android:id="@+id/btnSiete"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnCinco"
+                android:layout_toRightOf="@+id/btnUno"
+                android:text="8"
+                android:id="@+id/btnOcho"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnSeis"
+                android:layout_toRightOf="@+id/btnDos"
+                android:text="9"
+                android:id="@+id/btnNueve"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnSiete"
+                android:layout_alignParentLeft="true"
+                android:text="("
+                android:id="@+id/btnParenIzq"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnOcho"
+                android:layout_toRightOf="@+id/btnUno"
+                android:text="0"
+                android:id="@+id/btnCero"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnNueve"
+                android:layout_toRightOf="@+id/btnDos"
+                android:text="="
+                android:id="@+id/btnResultado"
+                android:layout_alignBottom="@+id/btnPunto" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnCero"
+                android:layout_toRightOf="@+id/btnParenIzq"
+                android:text="."
+                android:id="@+id/btnPunto"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnParenIzq"
+                android:layout_alignParentLeft="true"
+                android:layout_toRightOf="@+id/btnParenIzq"
+                android:text=")"
+                android:id="@+id/btnParenDere"/>
+
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/teclaOperaciones">
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:id="@+id/btnSumar"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:id="@+id/btnRestar"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="/"
+                android:id="@+id/btnDividir"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="x"
+                android:id="@+id/btnMultiplicar"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="pot"
+                android:id="@+id/btnPotencia"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="√"
+                android:id="@+id/btnRaiz"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
