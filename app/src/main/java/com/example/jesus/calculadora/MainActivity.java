@@ -14,13 +14,15 @@ public class MainActivity extends AppCompatActivity {
     Stack pila;
     String operacion="",subOperacion="";
     TextView pantalla;
+    util operaciones;
     Button btnUno,btnDos,btnTres,btnCuatro,btnCinco,btnSeis,btnSiete,btnOcho,btnNueve,btnCero,
             btnBorrar,btnBorrarTod,btnParenIzq,btnParenDer,btnSuma,btnResta,btnMulti,btnDivi,
-            btnPunto,btnPoten,btnRaiz,btnIgual,btnIngresar;
+            btnPunto,btnPoten,btnRaiz,btnIgual;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        operaciones = new util();
         pantalla = (TextView)findViewById(R.id.pantalla);
         btnUno = (Button)findViewById(R.id.btnUno);
         btnDos = (Button)findViewById(R.id.btnDos);
@@ -218,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                operacion = retornaOpe(operacion);
+                operacion = operaciones.retornaOpe(operacion);
                 actulizarPantalla();
             }
         });
@@ -229,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
     public void actulizarPantalla() {
         pantalla.setText(operacion);
     }
-
+    /*
     public void reconocePila(){
         String valor = pila.peek().toString();
         Stack pila2 = new Stack();
@@ -350,14 +352,5 @@ public class MainActivity extends AppCompatActivity {
         result = pila.pop().toString();
         return result;
     }
-
-
-    private static boolean isNumeric(String cadena){
-        try {
-            Integer.parseInt(cadena);
-            return true;
-        } catch (NumberFormatException nfe){
-            return false;
-        }
-    }
+*/
 }
